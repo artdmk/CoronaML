@@ -21,17 +21,22 @@ class ClassificationViewController: UIViewController, ImagePickerDelegate {
     @IBOutlet weak private var bottomView: UIView!
     
     private var imageClassificationProvider: MasksImageClassificationProvider?
+    private var masksDetectionProvider: MasksObjectDetectionProvider?
+    
     private lazy var imagePicker: ImagePickerHelper = {
         return ImagePickerHelper(presentationController: self, delegate: self)
     }()
     
-    fileprivate var selectedImage: UIImage?
+    var selectedImage: UIImage?
     fileprivate var descriptions: [String]?
         
     override func viewDidLoad() {
         super.viewDidLoad()
         imageClassificationProvider = MasksImageClassificationProvider()
         imageClassificationProvider?.delegate = self
+        
+        masksDetectionProvider = MasksObjectDetectionProvider()
+        masksDetectionProvider?.delegate = self
         
         addGestureRecognizers()
         
@@ -55,6 +60,7 @@ class ClassificationViewController: UIViewController, ImagePickerDelegate {
         checkVulnerabilityView?.backgroundColor = UIColor.generalBackgroundColor
         chooseImageView?.backgroundColor = UIColor.generalBackgroundColor
         bottomView.backgroundColor = UIColor.systemBackground.withAlphaComponent(0.9)
+        view.backgroundColor = UIColor.generalBackgroundColor
         
         // configure view with prediction results
         confidenceView?.layer.cornerRadius = 28.0
@@ -124,14 +130,25 @@ class ClassificationViewController: UIViewController, ImagePickerDelegate {
     }
     
     @IBAction func didTapClassify(_ sender: UIButton) {
-        guard let image = imageView?.image, let ciImage = CIImage(image: image) else {
+        detectMasks()
+    }
+    
+    @objc private func pickImage() {
+        imagePicker.present(from: view)
+    }
+    
+    private func classifyImage() {
+        guard let image = self.selectedImage, let ciImage = CIImage(image: image) else {
             return
         }
         imageClassificationProvider?.updateClassificationsForImage(ciImage, orientation: CGImagePropertyOrientation(image.imageOrientation))
     }
     
-    @objc private func pickImage() {
-        imagePicker.present(from: view)
+    private func detectMasks() {
+        guard let image = self.selectedImage, let ciImage = CIImage(image: image) else {
+            return
+        }
+        masksDetectionProvider?.performMasksDetectionForImage(ciImage, orientation: CGImagePropertyOrientation(image.imageOrientation))
     }
     
     // MARK: ImagePickerDelegate
@@ -139,6 +156,7 @@ class ClassificationViewController: UIViewController, ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         self.selectedImage = image
         self.descriptions = nil
+        classifyImage()
         updateUI()
     }
 }
@@ -148,5 +166,13 @@ extension ClassificationViewController: ImageClassificationDelegate {
     func finfishedClassificationProcessing(_ descriptions: [String]?) {
         self.descriptions = descriptions
         updateUI()
+    }
+}
+
+extension ClassificationViewController: ImageDetectorDelegate {
+    
+    func didFinfishDetectionProcessing(_ image: UIImage?) {
+        guard let image = image else { return }
+        self.imageView?.image = image
     }
 }

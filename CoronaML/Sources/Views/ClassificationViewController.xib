@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdO-QV-SDh">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-1Y-JvE">
-                            <rect key="frame" x="64" y="353" width="286" height="112"/>
+                            <rect key="frame" x="64" y="370" width="286" height="112"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="touch" translatesAutoresizingMaskIntoConstraints="NO" id="0sY-RE-er1">
                                     <rect key="frame" x="103" y="0.0" width="80" height="80"/>
@@ -141,7 +141,7 @@
             </subviews>
             <color key="backgroundColor" red="0.95686274509803915" green="0.94117647058823528" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="0Ds-sW-s2s" firstAttribute="bottom" secondItem="IdO-QV-SDh" secondAttribute="bottom" id="FJl-tL-Wbd"/>
+                <constraint firstAttribute="bottom" secondItem="IdO-QV-SDh" secondAttribute="bottom" id="FJl-tL-Wbd"/>
                 <constraint firstItem="0Ds-sW-s2s" firstAttribute="trailing" secondItem="IdO-QV-SDh" secondAttribute="trailing" id="FJw-kq-ppR"/>
                 <constraint firstItem="GUc-Ea-8Lq" firstAttribute="leading" secondItem="0Ds-sW-s2s" secondAttribute="leading" id="Pnq-Vs-Vit"/>
                 <constraint firstAttribute="bottom" secondItem="GUc-Ea-8Lq" secondAttribute="bottom" id="Trj-xx-tfx"/>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7627670C245FF87400ED67A4 /* MasksObjectDetectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7627670B245FF87400ED67A4 /* MasksObjectDetectionProvider.swift */; };
+		764429E12460224F007AEA44 /* MaskObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 764429E02460224F007AEA44 /* MaskObjectDetector.mlmodel */; };
 		76640D6A245E982F001AF559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76640D69245E982F001AF559 /* AppDelegate.swift */; };
 		76640D6E245E982F001AF559 /* ClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76640D6D245E982F001AF559 /* ClassificationViewController.swift */; };
 		76640D73245E9831001AF559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76640D72245E9831001AF559 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7627670B245FF87400ED67A4 /* MasksObjectDetectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasksObjectDetectionProvider.swift; sourceTree = "<group>"; };
+		764429E02460224F007AEA44 /* MaskObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MaskObjectDetector.mlmodel; sourceTree = "<group>"; };
 		76640D66245E982F001AF559 /* CoronaML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76640D69245E982F001AF559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76640D6D245E982F001AF559 /* ClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				76640D81245EBFAB001AF559 /* MasksImageClassifier.mlmodel */,
+				764429E02460224F007AEA44 /* MaskObjectDetector.mlmodel */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				76640D84245EC081001AF559 /* MasksImageClassificationProvider.swift */,
+				7627670B245FF87400ED67A4 /* MasksObjectDetectionProvider.swift */,
 			);
 			path = Classifiers;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 				76640D6E245E982F001AF559 /* ClassificationViewController.swift in Sources */,
 				76640D82245EBFAC001AF559 /* MasksImageClassifier.mlmodel in Sources */,
 				76DC3E30245ECF2F00A400D5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				764429E12460224F007AEA44 /* MaskObjectDetector.mlmodel in Sources */,
+				7627670C245FF87400ED67A4 /* MasksObjectDetectionProvider.swift in Sources */,
 				76640D85245EC081001AF559 /* MasksImageClassificationProvider.swift in Sources */,
 				76640D6A245E982F001AF559 /* AppDelegate.swift in Sources */,
 				76640D7F245E9BAB001AF559 /* ImagePickerHelper.swift in Sources */,
@@ -349,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KJJD25Q4A;
+				DEVELOPMENT_TEAM = DXJNX364NJ;
 				INFOPLIST_FILE = CoronaML/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,7 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KJJD25Q4A;
+				DEVELOPMENT_TEAM = DXJNX364NJ;
 				INFOPLIST_FILE = CoronaML/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
